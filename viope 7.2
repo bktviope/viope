@@ -1,0 +1,83 @@
+import random
+
+jatkuu = True
+pelimaara = 0
+ihmisenpisteet = 0
+tasapelipisteet = 0
+
+while jatkuu == True:
+  vaihtoehdot = ["Jalka","Ydinase","Torakka"]
+
+  ihmisenvalinta = input ("Jalka, Ydinase vai Torakka? (Lopeta lopettaa): ")
+
+  tk0 = False
+  tk1 = False
+  tk2 = False
+
+  tietokoneenvalinta = random.choice(vaihtoehdot)
+  if tietokoneenvalinta == "Jalka":
+    tk0 = True
+  elif tietokoneenvalinta == "Ydinase":
+    tk1 = True
+  elif tietokoneenvalinta == "Torakka":
+    tk2 = True
+    
+  if ihmisenvalinta == "Lopeta":
+    print ("pelasit",pelimaara, "kierrosta, joista voitit",ihmisenpisteet,"ja pelasit tasan",tasapelipisteet,"peliä")
+    jatkuu = False
+
+  elif ihmisenvalinta == "Jalka" and tk0 == True:
+    print("Sinä valitsit: Jalka")
+    print("Tietokone valitsi: Jalka")
+    print("Tasapeli!")
+    tasapelipisteet = tasapelipisteet + 1
+
+  elif ihmisenvalinta == "Jalka" and tk1 == True:
+    print("Sinä valitsit: Jalka")
+    print("Tietokone valitsi: Ydinase")
+    print("Hävisit!")
+
+  elif ihmisenvalinta == "Jalka" and tk2 == True:
+    print("Sinä valitsit: Jalka")
+    print("Tietokone valitsi: Torakka")
+    print("Voitit!")
+    ihmisenpisteet = ihmisenpisteet + 1
+  
+  elif ihmisenvalinta == "Ydinase" and tk0 == True:
+    print("Sinä valitsit: Ydinase")
+    print("Tietokone valitsi: Jalka")
+    print("Voitit!")
+    ihmisenpisteet = ihmisenpisteet + 1
+
+  elif ihmisenvalinta == "Ydinase" and tk1 == True:
+    print("Sinä valitsit: Ydinase")
+    print("Tietokone valitsi: Ydinase")
+    print("Tasapeli!")
+    tasapelipisteet = tasapelipisteet + 1
+
+  elif ihmisenvalinta == "Ydinase" and tk2 == True:
+    print("Sinä valitsit: Ydinase")
+    print("Tietokone valitsi: Torakka")
+    print("Hävisit!")
+
+  elif ihmisenvalinta == "Torakka" and tk0 == True:
+    print("Sinä valitsit: Torakka")
+    print("Tietokone valitsi: Jalka")
+    print("Hävisit!")
+
+  elif ihmisenvalinta == "Torakka" and tk1 == True:
+    print("Sinä valitsit: Torakka")
+    print("Tietokone valitsi: Ydinase")
+    print("Voitit!")
+    ihmisenpisteet = ihmisenpisteet + 1
+
+  elif ihmisenvalinta == "Torakka" and tk2 == True:
+    print("Sinä valitsit: Torakka")
+    print("Tietokone valitsi: Torakka")
+    print("Tasapeli!")
+    tasapelipisteet = tasapelipisteet + 1
+
+  tk0 = False
+  tk1 = False
+  tk2 = False
+  pelimaara = pelimaara + 1
